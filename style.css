@@ -28,13 +28,6 @@ ul  {
   padding: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-
-ul[role='list'],
-ol[role='list']  {
-  list-style: none;
-}
-
 /* Set core root defaults */
 
 html:focus-within  {
@@ -49,12 +42,6 @@ body  {
   line-height: 1.5;
 }
 
-/* A elements that don't have a class get default styles */
-
-a:not([class])  {
-  text-decoration-skip-ink: auto;
-}
-
 /* Make images easier to work with */
 
 img,
@@ -63,24 +50,6 @@ picture  {
   display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
-
-input,
-button,
-textarea,
-select  {
-  font: inherit;
-}
-
-/* Icons */
-
-.material-symbols-outlined  {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 200,
-  'opsz' 48
-}
 
 /* Main Styling */
 
@@ -94,12 +63,46 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   place-items: center;
-  border: 1px dashed red;
 }
 
 .image-frame {
   height: 80vh;
   min-width: 300px;
   width: 80vw;
-  border: 5px solid black;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0.5rem 0.5rem 3px rgb(0 0 0 / 0.2);
+}
+
+.image-slider {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  transition: transform 1s;
+  /* border: 2px dashed blue; */
+}
+
+img {
+  height: 100%;
+  width: 80vw;
+}
+
+.arrow {
+  height: 2rem;
+  width: 2rem;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.prevBtn {
+  left: 1rem;
+  background-image: url(./left_arrow.svg);
+}
+
+.nextBtn {
+  right: 1rem;
+  background-image: url(./right_arrow.svg);
 }
